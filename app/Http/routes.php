@@ -19,7 +19,7 @@
 	
 	//retrieve a full eis from eid
 	
-	Route::get('/api/eis/eid/{eid}', 'RetrieveController@getEIS');
+	Route::get('/api/eis/eid/{eid?}', 'RetrieveController@getEIS');
 	
 	Route::get('/api/eis/eid/{eid}/profile/{iccid?}', 'RetrieveController@getProfile');
 	
