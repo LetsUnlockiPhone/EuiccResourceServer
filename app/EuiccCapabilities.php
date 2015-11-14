@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 class EuiccCapabilities extends Model
 {
 
-	protected $table = 'eicccapabilities';
+	protected $table = 'euicccapabilities';
 	protected $primaryKey = 'eid';
 	
 	/*

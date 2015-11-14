@@ -11,9 +11,9 @@ use App\Http\Controllers\Controller;
 /**
  * This is a Laravel Controller class for handling data retrieval functions in the eUICC Resource Server
  * 
- * @package EuiccResourceServer
+ * @package    EuiccResourceServer
  * @subpackage Controllers
- * @author github.com/jk204
+ * @author     github.com/jk204
  *
  */
 class RetrieveController extends Controller
