@@ -11,20 +11,21 @@ use Illuminate\Database\Eloquent\Model;
  * @author     github.com/jk204
  *
  */
-class ProfileInfo extends Model
+class EuiccCapabilities extends Model
 {
-	protected $table = 'profileinfo';
-	protected $primarykey = 'iccid';
-	
+
+	protected $table = 'eicccapabilities';
+	protected $primaryKey = 'eid';
 	
 	/*
 	 * Establishes relationship with Eis Model
-	 * 
-	 * @return Model Eis
-	 */
+	*
+	* @return Model Eis
+	*/
 	function eis(){
-		
+	
 		return $this->belongsTo('App\Eis', 'eid', 'eid');
-		
+	
 	}
+	
 }
