@@ -1,9 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\User;
 use App\Http\Controllers\Controller;
 
+/**
+ * 
+ * @package      EuiccResourceServer
+ * @subpackage   Controllers
+ * @author       github.com/jk204
+ *
+ */
 class UpdateController extends Controller
 {
 	/**
@@ -25,7 +31,5 @@ class UpdateController extends Controller
 	
 		return $iccid;
 	}
-	
-
 	
 }

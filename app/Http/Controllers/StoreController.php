@@ -5,6 +5,14 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+/**
+ * A Laravel Controller class to Store Euicc Resources
+ * 
+ * @package      EuiccResourceServer
+ * @subpackage   Controllers
+ * @author       github.com/jk204
+ *
+ */
 class StoreController extends Controller
 {
 	/**
@@ -22,6 +30,7 @@ class StoreController extends Controller
 		
 		return 'done';
 	}
+	
 	
 	public function addAuditTrail($eid)
 	{
