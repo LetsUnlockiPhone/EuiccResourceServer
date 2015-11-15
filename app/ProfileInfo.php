@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProfileInfo extends Model
 {
 	protected $table = 'profileinfo';
-	protected $primarykey = 'iccid';
+	protected $primaryKey = 'iccid';
 	
 	
 	/*

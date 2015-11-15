@@ -44,7 +44,7 @@ class Eis extends Model
 	function euiccCapabilities()
 	{
 
-		return $this-hasMany('\App\EuiccCapabilities', 'eid', 'eid');
+		return $this-hasOne('\App\EuiccCapabilities', 'eid', 'eid');
 	}
 	
 	/**

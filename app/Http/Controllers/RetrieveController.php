@@ -99,7 +99,7 @@ class RetrieveController extends Controller
 				if ($Iccid == null) {
 						
 					//return all Profiles with id for a specific EIS on any SMSR
-					$Result = $ProfileInfo->where('eid',$Eid)->all();
+					$Result = $ProfileInfo->where('eid',$Eid)->get();
 						
 				} else {
 						
@@ -129,7 +129,7 @@ class RetrieveController extends Controller
 				if ($Iccid == null) {
 						
 					//return all profiles for a specific EIS on any SMSR
-					$Result = $ProfileInfo->where('eid',$Eid)->all();
+					$Result = $ProfileInfo->where('eid',$Eid)->get();
 						
 				} else {
 						
