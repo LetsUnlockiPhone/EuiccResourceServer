@@ -21,6 +21,7 @@ class ProfileInfo extends Model
 	 * Establishes relationship with Eis Model
 	 * 
 	 * @return Model Eis
+	 * 
 	 */
 	function eis(){
 		
