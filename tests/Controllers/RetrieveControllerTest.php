@@ -26,8 +26,12 @@ class RetrieveControllerTest extends TestCase
 		$Controller = new RetrieveController;
 		
 		//act
-		$result = $Controller->getEis('all','eid98');
-		//$this->assertCount(1, $result);
+		$result = $Controller->getEis('all','eid88');
+		$decoded = json_decode($result->content());
+		
+		//assert
+		
+		$this->assertEquals('eid88', $decoded->eid);
 		
 	}
 	
@@ -40,12 +44,16 @@ class RetrieveControllerTest extends TestCase
 		$Controller = new RetrieveController;
 		
 		//act
-		//$result = $Controller->getProfile('all','eid98');
-		//$this->assertCount(3, $result);
+		$result = $Controller->getProfile('all','eid98');
+		$decoded = json_decode($result->content());
+		
+		//assert
+		$this->assertEquals(3, count($decoded));
+		$this->assertEquals('eid98',$decoded[0]->eid);
 	}
 	
 	/**
-	 * 
+	 * Retrieves audit trails for a specific eid
 	 */
 	function testGetAuditTrail()
 	{
@@ -53,12 +61,17 @@ class RetrieveControllerTest extends TestCase
 		$Controller = new RetrieveController;
 		
 		//act
-		$result = $Controller->getAuditTrail('all','eid98');
-		//$this->assertCount(3, $result);
+		$result = $Controller->getAuditTrail('all', 'eid88');
+		$decoded = json_decode($result->content());
+
+		//assert
+		$this->assertEquals(3,count($decoded));
+		$this->assertEquals('eid88',$decoded[0]->eid);
+		
 	}
 	
 	/**
-	 * 
+	 * Retrieves euicc capabilities
 	 */
 	function testGetEuiccCapabilities()
 	{
@@ -67,6 +80,9 @@ class RetrieveControllerTest extends TestCase
 		
 		//act
 		$result = $Controller->getEuiccCapabilities('all','eid98');
-		//$this->assertCount(1, $result);
+		$decoded = json_decode($result->content());
+		
+		//assert
+		$this->assertEquals('eid98', $decoded->eid);
 	}
 }

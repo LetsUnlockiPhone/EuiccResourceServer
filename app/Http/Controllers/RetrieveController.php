@@ -31,9 +31,10 @@ class RetrieveController extends Controller
 	 * @return Response              EIS, collection of EIS or error code
 	 * 
 	 */
-	public function getEIS($SmsrId, $Eid = null)
+	public function getEIS($SmsrId, $Eid=null)
 	{
 	
+		
 		$Eis = new Eis;
 		
 		if ($SmsrId == 'all') { 
@@ -55,7 +56,7 @@ class RetrieveController extends Controller
 			
 			} else {
 
-				$result = $Eis->find($Eid);
+				$result = $Eis->getEisFromEid($Eid);
 				
 			}
 		}
@@ -205,6 +206,8 @@ class RetrieveController extends Controller
 	 */
 	public function getAuditTrail($SmsrId, $Eid, $AuditTrailId=null)
 	{
+		
+		
 		$AuditTrail = new AuditTrail;
 		
 		if ($SmsrId == 'all') {
@@ -224,10 +227,10 @@ class RetrieveController extends Controller
 				
 			} else {
 				
-				if ($AuditTrail == null) {
+				if ($AuditTrailId == null) {
 					
 					//return all Audit Trails with id for a specific EIS on any SMSR
-					$Result = $AuditTrail->where('eid',$Eid)->all();
+					$Result = $AuditTrail->where('eid',$Eid)->get();
 											
 				} else {
 					
@@ -257,7 +260,7 @@ class RetrieveController extends Controller
 				if ($AuditTrailId == null) {
 					
 					//return all Audit Trails with id for a specific EIS on any SMSR
-					$Result = $AuditTrail->where('eid',$Eid)->all();
+					$Result = $AuditTrail->where('eid',$Eid)->get();
 											
 				} else {
 					
